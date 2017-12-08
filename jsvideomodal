@@ -1,0 +1,43 @@
+<!-- html for the modal -->
+
+<li class="one_quarter">
+            <article class="excerpt"><a href="#"><img id="videoModal" class="inspace-10 borderedbox" src="images/demo/information_design_220x200.png" alt="Information Design Video Thumbnail"></a>
+
+            <!-- ####  Video Popup Modal ####  -->
+                <div id="myVideoModal" class="vidmodal">
+              <!-- Modal content -->
+                  <div class="vidmodal-content">
+                    <span class="vidclose">&times;</span>
+                    <iframe id=iframeid width="920" height="518" src="https://www.youtube.com/embed/wU5NhoINdRs" frameborder="0" allowfullscreen></iframe>
+                  </div>
+                </div>            
+            <!-- #### End Video Popup Modal #### -->
+
+
+// JavaScript for the modal
+
+// Get the modal
+var vidmodal = document.getElementById('myVideoModal');
+
+// Get the img that opens the modal
+var vidstill = document.getElementById("videoModal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("vidclose")[0];
+
+// When the user clicks on the img, open the modal 
+vidstill.onclick = function() {
+vidmodal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+vidmodal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == vidmodal) {
+    vidmodal.style.display = "none";
+}
+}
